@@ -23,7 +23,7 @@
 	\title{\huge Taller automatas de pila, Gramáticas libres de contexto y Máquinas de Turing}\\[2cm]
 	1.Construya un autómata de pila que reconozca los siguientes lenguajes:\\ \\
 	L1 = { SzSTz / S es una cadena de caracteres y ST su transpuesta},  L1 está definido sobre el alfabeto {a,b,z} y z no aparece en S\\
-	L2 = { xny2n / n>0}\\
+	L2 = ${ x^ny^{2n} / n>0}$\\
 	L3 = El conjunto de todas las cadenas sobre el alfabeto {(,),c,d) que tienen sus paréntesis balanceados y bien anidados.\\
 	\textbf{$L_1:$}
 		\begin{figure*}[ht]
@@ -50,10 +50,10 @@
 \begin{alignat*}{2}
 	S&= \{i, q_1, q_2, q_3, p\}\\
 	\textstyle \sum&= \{a, b, z\}\\
-	\Gamma&=\{a, b, z, 1,\#\}\\
-	T&=\{\}\\
-	i&=i\\
-	F&=\{p\}
+	\Gamma&=\{1,0,\#\}\\
+	T&=\{(i,\lambda,\lambda;q_1,\#),(q_1,a,\lambda;q_1,0),(q_1,b,\lambda;q_1,1),(q_1,z,\lambda;q_2,\lambda) ,(q_2,a,0;q_2,\lambda),\\&(q_2,b,1;q_2,\lambda),(q_2,z,\lambda,q_3,\lambda),(q_3,\lambda,\#;p,\lambda)    \}\\
+	i&=\{i\}\\
+	F&=\{\{p\}\}
 \end{alignat*}
 \newpage
 \textbf{$L_2:$}
@@ -81,13 +81,13 @@
 	\end{figure*}
 \newpage
 \paragraph{$L_2:$ Definición formal}A continuación se presenta la definición formal de la maquina de pila\\[0.2cm]
-\begin{alignat*}{2}
+\begin{alignat*}{2}	
 	S&= \{i, q_1, q_2, q_3, p\}\\
 	\textstyle \sum&= \{x,y\}\\
-	\Gamma&=\{x,y,1,\#\}\\
-	T&=\{\}\\
+	\Gamma&=\{1,\#\}\\
+	T&=\{(i,\lambda,\lambda,q_1,\#),(q_1,x,\lambda;q_1,1),(q_1,y,\lambda;q_2,\lambda),(q_2,y,1;q_3,\lambda),(q_3,y,\lambda;q_2,\lambda),(q_3,\lambda,\#;p,\lambda) \}\\
 	i&=i\\
-	F&=\{p\}
+	F&=\{\{p\}\}
 \end{alignat*}
 
 
@@ -114,9 +114,9 @@
 	S&= \{i, q_2, p\}\\
 	\textstyle \sum&= \{(, ),c,d\}\\
 	\Gamma&=\{\#,0\}\\
-	T&=\{\}\\
+	T&=\{(i,\lambda,\lambda;q_2,\#),(q_2,(,\lambda;q_2,0),(q_2,c/d,\lambda;q_2,\lambda),(q_2,),0;q_2,\lambda),(q_2,\lambda,\#;p,\lambda) \}\\
 	i&=i\\
-	F&=\{p\}
+	F&=\{\{p\}\}
 \end{alignat*}
 \paragraph{}
 2.Defina formalmente un autómata de pila para la gramática siguiente:\\[1cm]
@@ -142,12 +142,12 @@ $A \rightarrow c$\\
 \end{figure*}
 \paragraph{$2:$ Definición formal}A continuación se presenta la definición formal de la maquina de pila\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, q_1, q_2, q_3, p\}\\
-	\textstyle \sum&= \{\}\\
-	\Gamma&=\{\}\\
-	T&=\{\}\\
-	i&=\{\}\\
-	F&=\{\}
+	S&= \{i, p,q,f\}\\
+	\textstyle \sum&= \{a,b,c\}\\
+	\Gamma&=\{\#,S,A,a,b,c\}\\
+	T&=\{(i,\lambda,\lambda;p,\#),(p,\lambda,\lambda;q,S),(q,\lambda,S;q,A) , (q.\lambda,A;q,aAa),(q,\lambda,A;q,bAb),(q,\lambda,A;q,c),\\&(q,a,a;q,\lambda),(q,b,b;q,\lambda),(q,c,c;q,\lambda),(q,\lambda,\#;f,\lambda)\}\\
+	i&=\{i\}\\
+	F&=\{\{f\}\}
 \end{alignat*}
 3.Defina formalmente un autómata de pila para la gramática siguiente:\\[1cm]
 $S \rightarrow A$\\
@@ -164,7 +164,7 @@ $C \rightarrow abb$\\
 		\node[state,initial] (i){$i$};
 		\node[state,right=of i] (p){$p$};
 		\node[state,right=of p] (q){$q$};
-		\node[state,below right=of q] (f){$f$};
+		\node[state,accepting,below right=of q] (f){$f$};
 		
 		\draw	(i) edge[above] node{$\lambda,\lambda;\#$} (p)
 					 (p) edge[above] node{$\lambda,\lambda;S$} (q)
@@ -176,12 +176,12 @@ $C \rightarrow abb$\\
 \end{figure*}
 \paragraph{$3:$ Definición formal}A continuación se presenta la definición formal de la maquina de pila\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, q_1, q_2, q_3, p\}\\
-	\textstyle \sum&= \{\}\\
-	\Gamma&=\{\}\\
-	T&=\{\}\\
-	i&=\{\}\\
-	F&=\{\}
+	S&= \{i,p,1,f\}\\
+	\textstyle \sum&= \{a,b,c\}\\
+	\Gamma&=\{\#,S,A,C,a,c,B,b\}\\
+	T&=\{(i,\lambda,\lambda;p,\#),(p,\lambda,\lambda;q,S),(q,\lambda,S;q,A),(q,\lambda,S;q,C),(q,\lambda,A;q,aAc),(q,\lambda,A;q,aBc),(q,\lambda,B;q,bBc),\\&(q,\lambda,B;q,bc),(q,\lambda,C;q,aCbb),(q,\lambda,C;q,abb),(q,a,a;q,\lambda),(q,b,b;q,\lambda),(q,c,c;q,\lambda),(q,\lambda,\#;f,\lambda) \}\\
+	i&=\{i\}\\
+	F&=\{\{f\}\}
 \end{alignat*}
 
 \paragraph{}4.Diseñar una Máquina de Turing que calcule el complemento a 1 de un número binario.
@@ -203,12 +203,12 @@ $C \rightarrow abb$\\
 
 \paragraph{$4:$ Definición formal}A continuación se presenta la definición formal de la maquina de turing\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, q_1, q_2, q_3, p\}\\
-	\textstyle \sum&= \{\}\\
-	\Gamma&=\{\}\\
-	\delta&=\{\}\\
-	i&=\{\}\\
-	h&=\{\}
+	S&= \{i,q_1,h\}\\
+	\textstyle \sum&= \{0,1\}\\
+	\Gamma&=\{0,1\}\\
+	\delta&=\{[(i,0)=(q_1,1R)],[(i,1)=(q_1,0R)],[(q_1,0)=(q_1,1R)],[(q_1,1)=(q_1,0R)],\\&[(q_1,\Delta)=(h,\Delta R)]\}\\
+	i&=\{i\}\\
+	h&=\{\{h\}\}
 \end{alignat*}
 \newpage
 
@@ -236,12 +236,12 @@ $C \rightarrow abb$\\
 \end{figure*}
 \paragraph{$5:$ Definición formal}A continuación se presenta la definición formal de la maquina de turing\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, q_1, q_2, q_3, p\}\\
-	\textstyle \sum&= \{\}\\
-	\Gamma&=\{\}\\
-	\delta&=\{\}\\
-	i&=\{\}\\
-	h&=\{\}
+	S&= \{i, q_1, q_2, q_3, h\}\\
+	\textstyle \sum&= \{0,1\}\\
+	\Gamma&=\{0,1\}\\
+	\delta&=\{[(i,0)=(i,0R)],[(i,1)=(q_1,1R)] ,[(q_1,0)=(q_1,0R)],[(q_1,1)=(q_2,1R)],[(q_2,0)=(q_2,0R)],\\&[(q_2,1)=(q_1,1R)],[(q_1,\Delta)=(q_3,1R)],[(q_2,\Delta)=(q_3,0R)],[(q_3,\Delta)=(h,\Delta R)] \}\\
+	i&=\{i\}\\
+	h&=\{\{h\}\}
 \end{alignat*}
 \paragraph{}6.Diseñar una Máquina de Turing que sea un contador unario de caracteres del lenguaje con alfabeto $\sum = {a,b,c}$. Es decir, se deben devolver tantos 1’s como caracteres haya en la palabra de entrada. Es decir en la cinta deben quedar tantos 1 como caracteres se encuentren en la cinta.\\[1cm]
 \begin{figure*}[ht!]
@@ -261,12 +261,12 @@ $C \rightarrow abb$\\
 \end{figure*}
 \paragraph{$6:$ Definición formal}A continuación se presenta la definición formal de la maquina de turing\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, q_1, q_2, q_3, p\}\\
-	\textstyle \sum&= \{\}\\
-	\Gamma&=\{\}\\
+	S&= \{i, q_1,h\}\\
+	\textstyle \sum&= \{a,b,c\}\\
+	\Gamma&=\{1\}\\
 	\delta&=\{\}\\
-	i&=\{\}\\
-	h&=\{\}
+	i&=\{i\}\\
+	h&=\{\{h\}\}
 \end{alignat*}
 \newpage
 \paragraph{}7. Diseñar una Máquina de Turing que sea un contador unario de caracteres del lenguaje con alfabeto $\sum = {a,b,c}$. Es decir, se deben devolver tantos 1’s como caracteres haya en la palabra de entrada. Considerar la codificación unaria del 0 igual que en el ejercicio 2.\\[1cm]
@@ -283,11 +283,11 @@ $C \rightarrow abb$\\
 \end{figure*}
 \paragraph{$7:$ Definición formal}A continuación se presenta la definición formal de la maquina de turing\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, q_1, q_2, q_3, p\}\\
-	\textstyle \sum&= \{\}\\
-	\Gamma&=\{\}\\
+	S&= \{i, h\}\\
+	\textstyle \sum&= \{a,b,c\}\\
+	\Gamma&=\{1\}\\
 	\delta&=\{\}\\
-	i&=\{\}\\
-	h&=\{\}
+	i&=\{i\}\\
+	h&=\{\{h\}\}
 \end{alignat*}
 \end{document}
