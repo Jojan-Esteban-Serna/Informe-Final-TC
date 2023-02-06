@@ -243,6 +243,7 @@ $C \rightarrow abb$\\
 	i&=\{i\}\\
 	h&=\{\{h\}\}
 \end{alignat*}
+\newpage
 \paragraph{}6.Diseñar una Máquina de Turing que sea un contador unario de caracteres del lenguaje con alfabeto $\sum = {a,b,c}$. Es decir, se deben devolver tantos 1’s como caracteres haya en la palabra de entrada. Es decir en la cinta deben quedar tantos 1 como caracteres se encuentren en la cinta.\\[1cm]
 \begin{figure*}[ht!]
 	\centering
@@ -264,7 +265,7 @@ $C \rightarrow abb$\\
 	S&= \{i, q_1,h\}\\
 	\textstyle \sum&= \{a,b,c\}\\
 	\Gamma&=\{1\}\\
-	\delta&=\{\}\\
+	\delta&=\{[(i,\epsilon), (q_1,\epsilon,R)], [(q1,a), (q1,1,R)], [(q1,b), (q1,1,R)], [(q1,c), (q1,1,R)],\\& [(q1,\Delta), (h,\Delta,R)]\}\\
 	i&=\{i\}\\
 	h&=\{\{h\}\}
 \end{alignat*}
@@ -281,12 +282,13 @@ $C \rightarrow abb$\\
 		(i) edge[above] node{$\Delta/\Delta,R$} (h);
 	\end{tikzpicture}
 \end{figure*}
+
 \paragraph{$7:$ Definición formal}A continuación se presenta la definición formal de la maquina de turing\\[0.2cm]
 \begin{alignat*}{2}
 	S&= \{i, h\}\\
 	\textstyle \sum&= \{a,b,c\}\\
 	\Gamma&=\{1\}\\
-	\delta&=\{\}\\
+	\delta&=\{[(i,a), (i,1,R)], [(i,b), (i,1,R)], [(i,c), (i,1,R)], [(i,\Delta), (h,\Delta,R)]\}\\
 	i&=\{i\}\\
 	h&=\{\{h\}\}
 \end{alignat*}
