@@ -48,12 +48,12 @@
 		\caption{NFA for $\{SzS^tz \} : L_1 = \{a,b,z\} z \notin S$}
 \paragraph{$L_1:$ Definición formal}A continuación se presenta la definición formal de la maquina de pila\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, q_1, q_2, q_3, p\}\\
-	\textstyle \sum&= \{a, b, z\}\\
-	\Gamma&=\{1,0,\#\}\\
-	T&=\{(i,\lambda,\lambda;q_1,\#),(q_1,a,\lambda;q_1,0),(q_1,b,\lambda;q_1,1),(q_1,z,\lambda;q_2,\lambda) ,(q_2,a,0;q_2,\lambda),\\&(q_2,b,1;q_2,\lambda),(q_2,z,\lambda,q_3,\lambda),(q_3,\lambda,\#;p,\lambda)    \}\\
-	i&=\{i\}\\
-	F&=\{\{p\}\}
+	S=& \{i, q_1, q_2, q_3, p\}\\
+	\textstyle \sum=& \{a, b, z\}\\
+	\Gamma=&\{1,0,\#\}\\
+	T=&\{(i,\lambda,\lambda;q_1,\#),(q_1,a,\lambda;q_1,0),(q_1,b,\lambda;q_1,1),(q_1,z,\lambda;q_2,\lambda) ,(q_2,a,0;q_2,\lambda),\\&(q_2,b,1;q_2,\lambda),(q_2,z,\lambda,q_3,\lambda),(q_3,\lambda,\#;p,\lambda)    \}\\
+	i=&i\\
+	F=&\{\{p\}\}
 \end{alignat*}
 \newpage
 \textbf{$L_2:$}
@@ -111,12 +111,12 @@
 	\end{figure*}
 \paragraph{$L_3:$ Definición formal}A continuación se presenta la definición formal de la maquina de pila\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, q_2, p\}\\
-	\textstyle \sum&= \{(, ),c,d\}\\
-	\Gamma&=\{\#,0\}\\
-	T&=\{(i,\lambda,\lambda;q_2,\#),(q_2,(,\lambda;q_2,0),(q_2,c/d,\lambda;q_2,\lambda),(q_2,),0;q_2,\lambda),(q_2,\lambda,\#;p,\lambda) \}\\
-	i&=i\\
-	F&=\{\{p\}\}
+	S=& \{i, q_2, p\}\\
+	\textstyle \sum=& \{(, ),c,d\}\\
+	\Gamma=&\{\#,0\}\\
+	T=&\{(i,\lambda,\lambda;q_2,\#),(q_2,(,\lambda;q_2,0),(q_2,c/d,\lambda;q_2,\lambda),(q_2,),0;q_2,\lambda),(q_2,\lambda,\#;p,\lambda) \}\\
+	i=&i\\
+	F=&\{\{p\}\}
 \end{alignat*}
 \paragraph{}
 2.Defina formalmente un autómata de pila para la gramática siguiente:\\[1cm]
@@ -142,12 +142,12 @@ $A \rightarrow c$\\
 \end{figure*}
 \paragraph{$2:$ Definición formal}A continuación se presenta la definición formal de la maquina de pila\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, p,q,f\}\\
-	\textstyle \sum&= \{a,b,c\}\\
-	\Gamma&=\{\#,S,A,a,b,c\}\\
-	T&=\{(i,\lambda,\lambda;p,\#),(p,\lambda,\lambda;q,S),(q,\lambda,S;q,A) , (q.\lambda,A;q,aAa),(q,\lambda,A;q,bAb),(q,\lambda,A;q,c),\\&(q,a,a;q,\lambda),(q,b,b;q,\lambda),(q,c,c;q,\lambda),(q,\lambda,\#;f,\lambda)\}\\
-	i&=\{i\}\\
-	F&=\{\{f\}\}
+	S=& \{i, p,q,f\}\\
+	\textstyle \sum=& \{a,b,c\}\\
+	\Gamma=&\{\#,S,A,a,b,c\}\\
+	T=&\{(i,\lambda,\lambda;p,\#),(p,\lambda,\lambda;q,S),(q,\lambda,S;q,A) , (q.\lambda,A;q,aAa),(q,\lambda,A;q,bAb),(q,\lambda,A;q,c),\\&(q,a,a;q,\lambda),(q,b,b;q,\lambda),(q,c,c;q,\lambda),(q,\lambda,\#;f,\lambda)\}\\
+	i=&i\\
+	F=&\{\{f\}\}
 \end{alignat*}
 3.Defina formalmente un autómata de pila para la gramática siguiente:\\[1cm]
 $S \rightarrow A$\\
@@ -176,12 +176,12 @@ $C \rightarrow abb$\\
 \end{figure*}
 \paragraph{$3:$ Definición formal}A continuación se presenta la definición formal de la maquina de pila\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i,p,1,f\}\\
-	\textstyle \sum&= \{a,b,c\}\\
-	\Gamma&=\{\#,S,A,C,a,c,B,b\}\\
-	T&=\{(i,\lambda,\lambda;p,\#),(p,\lambda,\lambda;q,S),(q,\lambda,S;q,A),(q,\lambda,S;q,C),(q,\lambda,A;q,aAc),(q,\lambda,A;q,aBc),(q,\lambda,B;q,bBc),\\&(q,\lambda,B;q,bc),(q,\lambda,C;q,aCbb),(q,\lambda,C;q,abb),(q,a,a;q,\lambda),(q,b,b;q,\lambda),(q,c,c;q,\lambda),(q,\lambda,\#;f,\lambda) \}\\
-	i&=\{i\}\\
-	F&=\{\{f\}\}
+	S=& \{i,p,1,f\}\\
+	\textstyle \sum=& \{a,b,c\}\\
+	\Gamma=&\{\#,S,A,C,a,c,B,b\}\\
+	T=&\{(i,\lambda,\lambda;p,\#),(p,\lambda,\lambda;q,S),(q,\lambda,S;q,A),(q,\lambda,S;q,C),(q,\lambda,A;q,aAc),(q,\lambda,A;q,aBc),(q,\lambda,B;q,bBc),\\&(q,\lambda,B;q,bc),(q,\lambda,C;q,aCbb),(q,\lambda,C;q,abb),(q,a,a;q,\lambda),(q,b,b;q,\lambda),(q,c,c;q,\lambda),(q,\lambda,\#;f,\lambda) \}\\
+	i=&i\\
+	F=&\{\{f\}\}
 \end{alignat*}
 
 \paragraph{}4.Diseñar una Máquina de Turing que calcule el complemento a 1 de un número binario.
@@ -203,12 +203,12 @@ $C \rightarrow abb$\\
 
 \paragraph{$4:$ Definición formal}A continuación se presenta la definición formal de la maquina de turing\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i,q_1,h\}\\
-	\textstyle \sum&= \{0,1\}\\
-	\Gamma&=\{0,1\}\\
-	\delta&=\{[(i,0)=(q_1,1R)],[(i,1)=(q_1,0R)],[(q_1,0)=(q_1,1R)],[(q_1,1)=(q_1,0R)],\\&[(q_1,\Delta)=(h,\Delta R)]\}\\
-	i&=\{i\}\\
-	h&=\{\{h\}\}
+	S=& \{i,q_1,h\}\\
+	\textstyle \sum=& \{0,1\}\\
+	\Gamma=&\{0,1\}\\
+	\delta=&\{[(i,0)=(q_1,1R)],[(i,1)=(q_1,0R)],[(q_1,0)=(q_1,1R)],[(q_1,1)=(q_1,0R)],\\&[(q_1,\Delta)=(h,\Delta R)]\}\\
+	i=&i\\
+	h=&\{\{h\}\}
 \end{alignat*}
 \newpage
 
@@ -236,12 +236,12 @@ $C \rightarrow abb$\\
 \end{figure*}
 \paragraph{$5:$ Definición formal}A continuación se presenta la definición formal de la maquina de turing\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, q_1, q_2, q_3, h\}\\
-	\textstyle \sum&= \{0,1\}\\
-	\Gamma&=\{0,1\}\\
-	\delta&=\{[(i,0)=(i,0R)],[(i,1)=(q_1,1R)] ,[(q_1,0)=(q_1,0R)],[(q_1,1)=(q_2,1R)],[(q_2,0)=(q_2,0R)],\\&[(q_2,1)=(q_1,1R)],[(q_1,\Delta)=(q_3,1R)],[(q_2,\Delta)=(q_3,0R)],[(q_3,\Delta)=(h,\Delta R)] \}\\
-	i&=\{i\}\\
-	h&=\{\{h\}\}
+	S=& \{i, q_1, q_2, q_3, h\}\\
+	\textstyle \sum=& \{0,1\}\\
+	\Gamma=&\{0,1\}\\
+	\delta=&\{[(i,0)=(i,0R)],[(i,1)=(q_1,1R)] ,[(q_1,0)=(q_1,0R)],[(q_1,1)=(q_2,1R)],[(q_2,0)=(q_2,0R)],\\&[(q_2,1)=(q_1,1R)],[(q_1,\Delta)=(q_3,1R)],[(q_2,\Delta)=(q_3,0R)],[(q_3,\Delta)=(h,\Delta R)] \}\\
+	i=&i\\
+	h=&\{\{h\}\}
 \end{alignat*}
 \newpage
 \paragraph{}6.Diseñar una Máquina de Turing que sea un contador unario de caracteres del lenguaje con alfabeto $\sum = {a,b,c}$. Es decir, se deben devolver tantos 1’s como caracteres haya en la palabra de entrada. Es decir en la cinta deben quedar tantos 1 como caracteres se encuentren en la cinta.\\[1cm]
@@ -262,12 +262,12 @@ $C \rightarrow abb$\\
 \end{figure*}
 \paragraph{$6:$ Definición formal}A continuación se presenta la definición formal de la maquina de turing\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, q_1,h\}\\
-	\textstyle \sum&= \{a,b,c\}\\
-	\Gamma&=\{1\}\\
-	\delta&=\{[(i,\epsilon), (q_1,\epsilon,R)], [(q1,a), (q1,1,R)], [(q1,b), (q1,1,R)], [(q1,c), (q1,1,R)],\\& [(q1,\Delta), (h,\Delta,R)]\}\\
-	i&=\{i\}\\
-	h&=\{\{h\}\}
+	S=& \{i, q_1,h\}\\
+	\textstyle \sum=& \{a,b,c\}\\
+	\Gamma=&\{1\}\\
+	\delta=&\{[(i,\epsilon), (q_1,\epsilon,R)], [(q1,a), (q1,1,R)], [(q1,b), (q1,1,R)], [(q1,c), (q1,1,R)],\\& [(q1,\Delta), (h,\Delta,R)]\}\\
+	i=&i\\
+	h=&\{\{h\}\}
 \end{alignat*}
 \newpage
 \paragraph{}7. Diseñar una Máquina de Turing que sea un contador unario de caracteres del lenguaje con alfabeto $\sum = {a,b,c}$. Es decir, se deben devolver tantos 1’s como caracteres haya en la palabra de entrada. Considerar la codificación unaria del 0 igual que en el ejercicio 2.\\[1cm]
@@ -285,11 +285,11 @@ $C \rightarrow abb$\\
 
 \paragraph{$7:$ Definición formal}A continuación se presenta la definición formal de la maquina de turing\\[0.2cm]
 \begin{alignat*}{2}
-	S&= \{i, h\}\\
-	\textstyle \sum&= \{a,b,c\}\\
-	\Gamma&=\{1\}\\
-	\delta&=\{[(i,a), (i,1,R)], [(i,b), (i,1,R)], [(i,c), (i,1,R)], [(i,\Delta), (h,\Delta,R)]\}\\
-	i&=\{i\}\\
-	h&=\{\{h\}\}
+	S=& \{i, h\}\\
+	\textstyle \sum=& \{a,b,c\}\\
+	\Gamma=&\{1\}\\
+	\delta=&\{[(i,a), (i,1,R)], [(i,b), (i,1,R)], [(i,c), (i,1,R)], [(i,\Delta), (h,\Delta,R)]\}\\
+	i=&i\\
+	h=&\{\{h\}\}
 \end{alignat*}
 \end{document}
